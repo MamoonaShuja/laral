@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DemoController;
+use App\Http\Controllers\GeneralSettingController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,3 +23,5 @@ Route::get('/', function () {
 
 // Route::resource('/hello' , DemoController::class);
 Route::get('/hello' , [DemoController::class , 'index'])->name('demo.index');
+Route::get('/generalSetting' , [GeneralSettingController::class , 'index'])->name('gs.index');
+Route::post('/generalSetting/store' , [GeneralSettingController::class , 'store'])->name('gs.store');
